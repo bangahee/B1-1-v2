@@ -21,7 +21,7 @@
 * `agent-admin`, `agent-dev`, `agent-test` 사용자 생성
 * `agent-common`, `agent-core` 그룹 생성
 * 역할 기반 디렉토리 권한 설정
-* ACL 확인을 통한 권한 검증
+* 일반 Linux 권한 설정 및 getfacl을 통한 권한 상태 검증
 * 환경 변수 설정
 * 제공 애플리케이션 `agent-app` 실행 환경 구성
 * CPU 아키텍처에 맞는 앱 바이너리 선택
@@ -333,7 +333,7 @@ getfacl /home/agent-admin/agent-app/bin
 getfacl /var/log/agent-app
 ```
 
-일반 Linux 권한을 사용했지만, 제출 증빙을 위해 ACL 상태를 확인하였다.
+일반 Linux 소유자/그룹/권한 설정(chown, chmod)을 기반으로 디렉토리 접근 정책을 구성하고, 제출 증빙을 위해 getfacl 명령어로 권한 상태를 확인하였다.
 
 ---
 
